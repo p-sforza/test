@@ -81,7 +81,7 @@ app.get('/pagecount', function (req, res) {
 
 
 // static content access
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 
 // error handling
 app.use(function(err, req, res, next){
