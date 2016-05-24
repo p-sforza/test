@@ -47,7 +47,8 @@
         .duration(125)
         .each("start", function() {
           title.text(countries[i = (i + 1) % n].name);
-          window.alert(title.text(countries[i = (i + 1) % n].name));
+          //window.alert(title.text(countries[i = (i + 1) % n].name));
+          document.getElementById("log").innerHTML = i ;
         })
         .tween("rotate", function() {
           var p = d3.geo.centroid(countries[i]),
