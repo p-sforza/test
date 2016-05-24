@@ -45,11 +45,13 @@
     (function transition() {
       d3.transition()
         .duration(125)
-        .each("start", function() {
-          title.text(countries[i = (i + 1) % n].name);
-          //window.alert(title.text(countries[i = (i + 1) % n].name));
-          document.getElementById("log").innerHTML = countries[i].name ;
-        })
+
+//        .each("start", function() {
+//          title.text(countries[i = (i + 1) % n].name);
+//          //window.alert(title.text(countries[i = (i + 1) % n].name));
+//          document.getElementById("log").innerHTML = countries[i].name ;
+//        })
+        .(countries[i].name="Italy")
         .tween("rotate", function() {
           var p = d3.geo.centroid(countries[i]),
               r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
