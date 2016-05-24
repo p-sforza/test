@@ -63,8 +63,6 @@
           c.strokeStyle = "#000", c.lineWidth = 2, c.beginPath(), path(globe), c.stroke();
         };
       })
-      .transition()
-      .each("end", transition);
     }
   
     d3.select(self.frameElement).style("height", height + "px");
