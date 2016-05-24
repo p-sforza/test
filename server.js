@@ -79,6 +79,10 @@ app.get('/pagecount', function (req, res) {
   }
 });
 
+
+// static content access
+app.use(express.static('public'));
+
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
