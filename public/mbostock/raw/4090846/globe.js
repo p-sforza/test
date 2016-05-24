@@ -47,12 +47,13 @@
   function transition(i) {
   	d3.transition()
       .duration(125)
+      .start(
+          title.text(countries[i = (i + 1) % n].name);
+          document.getElementById("log").innerHTML = countries[i].name ;
+       })
       .tween("rotate", function() {
         var p = d3.geo.centroid(countries[i]),
             r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
-
-        title.text(countries[i].name);
-        document.getElementById("log").innerHTML = countries[i].name ;
 
         return function(t) {
           projection.rotate(r(t));
@@ -64,7 +65,7 @@
         };
       })
       .transition()
-      .each("end", transition);
+      .end(transition);
     }
   
     d3.select(self.frameElement).style("height", height + "px");
