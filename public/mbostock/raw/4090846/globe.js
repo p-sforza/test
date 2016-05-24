@@ -42,17 +42,15 @@
       return a.name.localeCompare(b.name);
     });
 
-    (function transition() {
-    	countries.name="Italy";
-    	
+    function transition(i) {
     	d3.transition()
         .duration(125)
 
-//        .each("start", function() {
-//          title.text(countries[i = (i + 1) % n].name);
-//          //window.alert(title.text(countries[i = (i + 1) % n].name));
-//          document.getElementById("log").innerHTML = countries[i].name ;
-//        })
+        .each("start", function() {
+          title.text(countries[i].name);
+          //window.alert(title.text(countries[i = (i + 1) % n].name));
+          document.getElementById("log").innerHTML = countries[i].name ;
+        })
         .tween("rotate", function() {
           var p = d3.geo.centroid(countries[i]),
               r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
@@ -67,7 +65,7 @@
         })
         .transition()
         .each("end", transition);
-      })();
+      }
     }
 
     d3.select(self.frameElement).style("height", height + "px");
