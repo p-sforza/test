@@ -44,7 +44,7 @@
 
     (function transition() {
       d3.transition()
-        .duration(1250)
+        .duration(125)
         .each("start", function() {
           title.text(countries[i = (i + 1) % n].name);
         })
