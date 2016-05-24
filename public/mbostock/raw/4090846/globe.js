@@ -43,7 +43,7 @@
     });
 
     (function transition() {
-    	var countries.name="Italy";
+    	countries.name="Italy";
     	
     	d3.transition()
         .duration(125)
