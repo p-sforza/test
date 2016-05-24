@@ -48,7 +48,7 @@
         .each("start", function() {
           title.text(countries[i = (i + 1) % n].name);
           //window.alert(title.text(countries[i = (i + 1) % n].name));
-          document.getElementById("log").innerHTML = i ;
+          document.getElementById("log").innerHTML = countries[i].name ;
         })
         .tween("rotate", function() {
           var p = d3.geo.centroid(countries[i]),
