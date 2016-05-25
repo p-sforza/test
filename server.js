@@ -5,14 +5,6 @@ var express = require('express'),
     eps     = require('ejs'),
     morgan  = require('morgan');
 
-
-// ---------------------------------------------
-// websocket
-// ---------------------------------------------
-
-//---------------------------------------------
-
-
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
@@ -86,10 +78,6 @@ app.get('/pagecount', function (req, res) {
     res.send('{ pageCount: -1 }');
   }
 });
-
-
-// static content access
-app.use('/public', express.static('public'));
 
 // error handling
 app.use(function(err, req, res, next){
