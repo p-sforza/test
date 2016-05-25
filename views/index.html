@@ -7,20 +7,10 @@
   <link href="public/globe.css" rel="stylesheet" type="text/css">
 
 <!--  ---------------------------------------------
-// websocket
-// --------------------------------------------- -->
+       websocket
+      --------------------------------------------- -->
 
-  <script>
-    var newUser = function(data) {
-	  document.getElementById("table").innerHTML += "<tr><td>"+data.time+"</td><td>"+data.id+"</td><td>"+data.userAgent+"</td></tr>";
-    }
-    
-    var ws = new WebSocket('ws://localhost:1337');
-    ws.onmessage = function (event) {
-      newUser(JSON.parse(event.data));
-    };
-  </script>
-<!/-- // --------------------------------------------- -->
+<!--  --------------------------------------------- -->
 
 </head>
 
